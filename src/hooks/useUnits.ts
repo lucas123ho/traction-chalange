@@ -68,8 +68,6 @@ export default function useUnits(): UseUnitsResponse {
       return;
     }
 
-    console.log(units);
-
     dispatch(setUnits(units));
   }, [unitService, selectedCompany]);
 
