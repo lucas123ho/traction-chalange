@@ -7,6 +7,10 @@ export const Container = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  top: 0;
+  height: 6rem;
+  box-shadow: 0px 0px 10px rgba(0,0,0,.3);
 `;
 
 export const Flex = styled.div`

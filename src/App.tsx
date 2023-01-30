@@ -4,6 +4,8 @@ import { Provider } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
+import Dashboard from 'layout/Dashboard';
+
 import Home from 'pages/Home';
 
 import store from 'store';
@@ -24,7 +26,12 @@ function App() {
         >
           <GlobalStyle />
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Dashboard />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/assets" element={<h1>Assets</h1>} />
+              <Route path="/workorders" element={<h1>Workorders</h1>} />
+              <Route path="*" element={<h1>Not found</h1>} />
+            </Route>
           </Routes>
         </ConfigProvider>
       </ThemeProvider>
