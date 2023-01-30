@@ -29,7 +29,12 @@ const companySlice = createSlice({
       }
 
       state.companies = action.payload;
-      state.selectedCompany = action.payload[0];
+
+      const selectedCompanyFromPayload = action.payload.find(
+        (company) => company.id === state.selectedCompany?.id
+      );
+
+      state.selectedCompany = selectedCompanyFromPayload ?? action.payload[0];
     },
     ...requestStatusReducer
   }

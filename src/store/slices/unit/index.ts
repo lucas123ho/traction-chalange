@@ -26,7 +26,12 @@ export const unitSlice = createSlice({
       }
 
       state.units = action.payload;
-      state.selectedUnit = action.payload[0];
+
+      const selectedUnitFromPayload = action.payload.find(
+        (unit) => unit.id === state.selectedUnit?.id
+      );
+
+      state.selectedUnit = selectedUnitFromPayload ?? action.payload[0];
     },
     ...requestStatusReducer
   }

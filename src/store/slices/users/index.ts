@@ -26,7 +26,10 @@ export const userSlice = createSlice({
       }
 
       state.users = action.payload;
-      state.selectedUser = action.payload[0];
+
+      const selectedUserFromPayload = action.payload.find(user => user.id === state.selectedUser?.id);
+
+      state.selectedUser = selectedUserFromPayload ?? action.payload[0];
     },
     ...requestStatusReducer
   }
