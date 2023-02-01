@@ -56,5 +56,9 @@
     "eslint-plugin-react-hooks": "4.3.0",
     "prettier": "^2.8.3",
     "typescript": "*"
+  },
+  "engines": {
+    "node": "16.13.2",
+    "npm": "8.1.2"
   }
 }
