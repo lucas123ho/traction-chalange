@@ -1,11 +1,5 @@
 import styled from 'styled-components';
 
-import { Avatar as AvatarAntd } from 'antd';
-
-export const Avatar = styled(AvatarAntd)`
-  background-color: ${({ theme }) => theme.highlight};
-`;
-
 export const Container = styled.div<{ dark: boolean }>`
   display: flex;
   align-items: center;

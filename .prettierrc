@@ -5,6 +5,7 @@
   "printWidth": 80,
   "importOrder": [
     "^components",
+    "^constants",
     "^hooks",
     "^layout",
     "^pages",

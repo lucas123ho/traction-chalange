@@ -9,3 +9,7 @@ export const Container = styled.div`
 export const Content = styled.div`
   padding: 0 1.2rem;
 `;
+
+export const OutletContent = styled.div`
+  padding: 2rem 0 4rem 0;
+`;

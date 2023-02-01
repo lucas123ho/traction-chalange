@@ -5,4 +5,5 @@ import { StateWithRequestStatus } from '../type';
 export interface UserState extends StateWithRequestStatus {
   selectedUser: User | null;
   users: User[];
+  allUsers: User[];
 }

@@ -6,6 +6,10 @@ const theme = {
   highlight: '#22d3ee',
   white: '#fff',
   ligthGray: '#E7E7E7',
+  red: '#F14445',
+  green: '#25C660',
+  blue: '#33CBCB',
+  orange: '#FA913D'
 };
 
 export type ThemeType = typeof theme;

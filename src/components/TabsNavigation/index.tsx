@@ -1,7 +1,7 @@
 import {
-  CarryOutOutlined,
   DesktopOutlined,
-  SettingOutlined
+  SettingOutlined,
+  ToolOutlined
 } from '@ant-design/icons';
 import { Menu, MenuProps } from 'antd';
 import { useMemo } from 'react';
@@ -21,7 +21,7 @@ const items: MenuProps['items'] = [
   {
     label: 'Ordens de Serviço',
     key: '/workorders',
-    icon: <CarryOutOutlined />
+    icon: <ToolOutlined />
   }
 ];
 

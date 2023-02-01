@@ -5,12 +5,13 @@ import { User } from 'services/user/type';
 
 import {
   resetError,
+  setAllUsers,
   setError,
   setLoading,
   setSelectedUser,
   setUsers
-} from 'store/slices/users';
-import { UserState } from 'store/slices/users/type';
+} from 'store/slices/user';
+import { UserState } from 'store/slices/user/type';
 
 import { useAppDispatch } from './useAppDispatch';
 import { useAppSelector } from './useAppSelector';
@@ -20,13 +21,14 @@ import useUnits from './useUnits';
 interface UseUsersResponse extends UserState {
   usersWithoutSelected: User[];
   getAllUsers: () => void;
+  getAllUsersBySelectedUnit: () => void;
   handleChangeSelectedUser: (user: User) => void;
 }
 
 const userServiceInstance = new UserService();
 
 export default function useUsers(): UseUsersResponse {
-  const { selectedUser, users, error, loading } = useAppSelector(
+  const { selectedUser, users, error, loading, allUsers } = useAppSelector(
     (state) => state.user
   );
   const { selectedUnit } = useUnits();
@@ -58,6 +60,18 @@ export default function useUsers(): UseUsersResponse {
   );
 
   const getAllUsers = useCallback(async () => {
+    const users = await call<User[]>(() => {
+      return userServiceInstance.getAllUsers();
+    });
+
+    if (!users) {
+      return;
+    }
+
+    dispatch(setAllUsers(users));
+  }, [userServiceInstance, call]);
+
+  const getAllUsersBySelectedUnit = useCallback(async () => {
     if (!selectedUnit) {
       return;
     }
@@ -69,8 +83,6 @@ export default function useUsers(): UseUsersResponse {
     if (!users) {
       return;
     }
-
-    console.log(users);
 
     dispatch(setUsers(users));
   }, [userServiceInstance, selectedUnit, call]);
@@ -89,6 +101,8 @@ export default function useUsers(): UseUsersResponse {
     loading,
     getAllUsers,
     usersWithoutSelected,
-    handleChangeSelectedUser
+    handleChangeSelectedUser,
+    getAllUsersBySelectedUnit,
+    allUsers
   };
 }

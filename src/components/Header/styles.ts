@@ -8,6 +8,7 @@ export const Container = styled.header`
   align-items: center;
   justify-content: space-between;
   position: fixed;
+  z-index: 99;
   top: 0;
   height: 6rem;
   box-shadow: 0px 0px 10px rgba(0,0,0,.3);
