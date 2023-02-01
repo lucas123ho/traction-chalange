@@ -52,7 +52,7 @@ export default function WorkorderCreateDrawer({
   const { allAssets } = useAssets();
 
   const onFinish = (values: FormFields) => {
-    // onReset();
+    onReset();
     onClose();
     onSuccess(values);
   };
