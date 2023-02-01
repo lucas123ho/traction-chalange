@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/traction-chalange/static/css/main.dd1ea7b7.css",
+    "main.js": "/traction-chalange/static/js/main.2f194e75.js",
+    "index.html": "/traction-chalange/index.html",
+    "main.dd1ea7b7.css.map": "/traction-chalange/static/css/main.dd1ea7b7.css.map",
+    "main.2f194e75.js.map": "/traction-chalange/static/js/main.2f194e75.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dd1ea7b7.css",
+    "static/js/main.2f194e75.js"
+  ]
+}
