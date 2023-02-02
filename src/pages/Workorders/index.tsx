@@ -76,6 +76,7 @@ export default function Workorders() {
   const params = useParams();
   const workorderId = params.workorderId;
 
+  const [alreadyFiltered, setAlreadyFiltered] = useState(false);
   const [openCreateDrawer, setOpenCreateDrawer] = useState(false);
   const [filter, setFilter] = useState<WorkorderStatus[]>([]);
   const debouncedFilter = useDebounce(filter, 1000);
@@ -103,6 +104,11 @@ export default function Workorders() {
   }, []);
 
   useEffect(() => {
+    if (!debouncedFilter.length && !alreadyFiltered) {
+      return;
+    }
+
+    setAlreadyFiltered(true);
     getFilteredWorkorders({ status: debouncedFilter });
   }, [debouncedFilter]);
 

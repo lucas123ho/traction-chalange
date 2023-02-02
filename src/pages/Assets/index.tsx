@@ -47,10 +47,16 @@ export default function Assets() {
     loading: loadingAssets
   } = useAssets();
   const navigate = useNavigate();
+  const [alreadyFiltered, setAlreadyFiltered] = useState(false);
   const [filter, setFilter] = useState<Status[]>(storedFilter.status);
   const debouncedFilter = useDebounce(filter, 1000);
 
   useEffect(() => {
+    if (!debouncedFilter.length && !alreadyFiltered) {
+      return;
+    }
+
+    setAlreadyFiltered(true);
     getFilteredAssets({ status: debouncedFilter });
   }, [debouncedFilter]);
 
