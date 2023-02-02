@@ -117,7 +117,7 @@ export default function WorkorderCreateDrawer({
             showArrow
             size="large"
             defaultValue={[]}
-            placeholder="Quais serão os responsáveis?"
+            placeholder="Quais a prioridade?"
             options={WORKORDER_PRIORITIES.map((priority) => ({
               label: `${WORKORDER_PRIORITY_LABEL[priority]} (${priority})`,
               value: priority
