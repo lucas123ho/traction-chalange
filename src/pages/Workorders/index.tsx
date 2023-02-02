@@ -179,7 +179,7 @@ export default function Workorders() {
               </Button>
             </Col>
           </Row>
-          <Row style={{ marginTop: '2rem' }} gutter={[20, 20]}>
+          <Row align='stretch' style={{ marginTop: '2rem' }} gutter={[20, 20]}>
             {loading ? (
               <>
                 <Col xs={24} sm={24} md={12} lg={12} xl={12}>

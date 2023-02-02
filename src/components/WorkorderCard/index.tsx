@@ -25,7 +25,7 @@ export default function WorkorderCard({
   }, [checklist]);
 
   return (
-    <Card hoverable onClick={onClick}>
+    <Card style={{ height: '100%' }} hoverable onClick={onClick}>
       <Card.Meta
         avatar={
           <Space direction="vertical">

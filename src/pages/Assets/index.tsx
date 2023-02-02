@@ -77,7 +77,7 @@ export default function Assets() {
         />
       </Space>
       {filteredAssets.length || loadingAssets ? (
-        <Row style={{ marginTop: '2rem' }} gutter={[20, 20]}>
+        <Row align="stretch" style={{ marginTop: '2rem' }} gutter={[20, 20]}>
           {loadingAssets ? (
             <>
               <Col xs={24} sm={24} md={6} lg={6} xl={6}>

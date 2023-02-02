@@ -26,6 +26,7 @@ function AssetCard({
 }: Props) {
   return (
     <Card
+      style={{ height: '100%' }}
       onClick={onClick}
       hoverable
       cover={<S.CoverImage src={image} alt={name} />}
